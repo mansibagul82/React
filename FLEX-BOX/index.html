@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Add react and react-dom scripts -->
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>
+<script type="text/babel">
+
+    const rootBox = document.getElementById("root");
+
+    const boxElement = ReactDOM.createRoot(rootBox);
+
+    const parentstyle = {
+        padding: '2%',
+        display: 'flex',
+        justifyContent: 'center',
+        border: '2px solid black',
+        backgroundColor: 'rgb(248, 220, 185)',    
+    }
+
+    const creatElement = React.createElement("div",{id:"parent",style:parentstyle},
+      [React.createElement("div",{style: {marginRight: '37%',fontSize: 'xx-large'}},"parent"),
+        React.createElement("div",{style: {border:'2px solid black',padding: '3%',backgroundColor:'red', marginLeft: '20%',margin: '1%',}},"1"),
+      React.createElement("div",{style: {border:'2px solid black',padding: '3%',backgroundColor: 'yellow',margin: '1%'}},"2"),
+      React.createElement("div",{style: {border:'2px solid black',padding: '3%',backgroundColor: 'green',margin: '1%'}},"3"),
+      React.createElement("div",{style: {border:'2px solid black',padding: '3%',backgroundColor: 'purple',margin: '1%'}},"4"),
+    ])
+
+    boxElement.render(creatElement)
+
+</script>
